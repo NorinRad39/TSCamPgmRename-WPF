@@ -1,0 +1,52 @@
+﻿<Window x:Class="TSCamPgmRename_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TSCamPgmRename" Height="380" Width="600"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" Icon="/renommer.ico">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="25"/>
+            <RowDefinition Height="Auto" MinHeight="20  "/>
+            <RowDefinition Height="Auto" MinHeight="27.96"/>
+            <RowDefinition Height="Auto" MinHeight="18"/>
+            <RowDefinition Height="Auto" MinHeight="27.96"/>
+            <RowDefinition Height="Auto" MinHeight="18"/>
+            <RowDefinition Height="Auto" MinHeight="27.96"/>
+            <RowDefinition Height="23.402"/>
+            <RowDefinition Height="137"/>
+            
+        </Grid.RowDefinitions>
+
+        <!-- Menu en haut -->
+        <Menu VerticalAlignment="Top">
+
+            <MenuItem Header="Quitter" Click="QuitterMenuItem_Click"/>
+
+        </Menu>
+
+        <!-- Document courant -->
+        <TextBlock Grid.Row="1" Text="Document courant :" FontWeight="Bold" Margin="0,0,0,35" Grid.RowSpan="2"/>
+        <TextBlock Grid.Row="1" Name="label2" Margin="120,0,0,35" Foreground="DarkBlue"
+                   Text="Doc" Grid.RowSpan="2"/>
+
+        <!-- Nom des programmes -->
+        <TextBlock Grid.Row="2" Text="Nom des programmes" Margin="0,10,0,5"/>
+        <TextBox Grid.Row="3" Name="textBox1" Text="" Margin="10,0,10,28" Grid.RowSpan="2"/>
+
+        <!-- Numéro de départ -->
+        <TextBlock Grid.Row="4" Text="Numéro de départ" Margin="0,10,0,5"/>
+        <TextBox Grid.Row="5" Name="textBox3" Text="" Margin="10,0,10,28" Grid.RowSpan="2"/>
+
+        <!-- Incrément -->
+        <TextBlock Grid.Row="6" Text="Incrément" Margin="0,10,0,5"/>
+        <TextBox Grid.Row="7" Name="textBox2" Text="" Margin="10,0,10,0"/>
+
+        <!-- Boutons en bas -->
+        <StackPanel Grid.Row="8" VerticalAlignment="Center" Height="117">
+            <Button Content="Renommer" Name="Renommer" Width="560" Height="50" Margin="0,0,0,5" Click="Renommer_Click"/>
+            <Button Content="Actualiser" x:Name="Actualiser" Width="560" Height="50"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
