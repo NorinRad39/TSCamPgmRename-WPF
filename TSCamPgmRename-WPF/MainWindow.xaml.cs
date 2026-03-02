@@ -77,6 +77,14 @@ namespace TSCamPgmRename_WPF
         private void Renommer_Click(object sender, EventArgs e)
         {
             List<ElementId> programs = ListePrograms(currentDoc.CamOperations);
+
+            if (programs.Count == 0) 
+            {
+                Wpf.MessageBox.Show("Aucun programme CN trouvé pour les opérations du document.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+
+            }
+
             List<string> programsNames = ProgramsNameList(programs);
             if (elec)
             {
