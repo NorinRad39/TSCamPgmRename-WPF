@@ -41,6 +41,7 @@ namespace TSCamPgmRename_WPF
         private Document currentDoc;
         private StartConnect startConnect;
         bool elec = new bool();
+        List<ElementId> programs = new List<ElementId>();
 
 
         public MainWindow()
@@ -55,6 +56,15 @@ namespace TSCamPgmRename_WPF
             // Initialisation de currentDoc
             currentDoc = new Document();
             currentDoc.DocId = TSH.Documents.EditedDocument;
+
+            programs = ListePrograms(currentDoc.CamOperations);
+
+            if (programs.Count == 0)
+            {
+                Wpf.MessageBox.Show("Aucun programme CN trouvé pour les opérations du document.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                this.Close(); 
+
+            }
 
             // Mettre à jour le texte du label avec le nom du document
             label2.Text = currentDoc.Nom;
@@ -76,14 +86,7 @@ namespace TSCamPgmRename_WPF
 
         private void Renommer_Click(object sender, EventArgs e)
         {
-            List<ElementId> programs = ListePrograms(currentDoc.CamOperations);
-
-            if (programs.Count == 0) 
-            {
-                Wpf.MessageBox.Show("Aucun programme CN trouvé pour les opérations du document.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-                return;
-
-            }
+            
 
             List<string> programsNames = ProgramsNameList(programs);
             if (elec)
