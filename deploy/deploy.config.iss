@@ -29,7 +29,9 @@
 ; ecrivez-le en toutes lettres : "MonApplication".
 #define AppSlug AppName
 
-#define ExeName AppSlug + ".exe"
+; AssemblyName du csproj (TSCamPgmRename-WPF) ne correspond pas a AppSlug (TSCamPgmRename) :
+; ExeName ne peut donc pas se deriver de AppSlug comme dans les autres projets.
+#define ExeName "TSCamPgmRename-WPF.exe"
 
 ; Dossier reseau ou atterrissent le setup et update.xml, et que AutoUpdater
 ; interroge a chaque lancement de l'application.
@@ -37,7 +39,7 @@
 ; Chemin UNC, jamais une lettre de lecteur : un mappage est propre a la session,
 ; et sur un poste ou il manque les mises a jour cesseraient sans que personne ne
 ; s'en apercoive.
-#define UpdateFolder "\\jbtec-be\meca$\topsolid\TSCamPgmRename" + AppSlug
+#define UpdateFolder "\\jbtec-be\meca$\topsolid\" + AppSlug
 
 #define AppPublisher "Florent FABBRI"
 
@@ -56,17 +58,17 @@
 ;
 ; Les doubles accolades ne sont pas une faute : Inno lit "{{" comme une accolade
 ; litterale.
-#define AppId "{{00000000-0000-0000-0000-000000000000}"
+#define AppId "{{AD8D45EA-C929-470D-A339-A1C8C7C1B3BE}"
 
 ; Dossier de sortie de la compilation Release. Tout son contenu part dans le
 ; setup, sous-dossiers compris.
 ;
 ; Attention a la profondeur : "..\<Projet>\bin\Release" quand le .csproj est dans
 ; un sous-dossier, "..\bin\Release" quand il est a la racine du depot.
-#define SourceDir "..\MonApplication\bin\Release"
+#define SourceDir "..\TSCamPgmRename-WPF\bin\Release"
 
 ; Icone du programme d'installation.
-#define IconFile "..\MonApplication\app.ico"
+#define IconFile "..\TSCamPgmRename-WPF\renommer.ico"
 
 
 ; --- Options (laissez la ligne en commentaire si la fonction ne sert pas) ------
