@@ -85,8 +85,8 @@
 ; Certificat a deposer dans le magasin TrustedPublisher de l'utilisateur, et cle
 ; privee servant a signer le setup. La cle n'est pas versionnee : sur un poste
 ; qui ne l'a pas, la signature est sautee et la publication aboutit quand meme.
-;#define CertFile "cert\" + AppSlug + ".cer"
-;#define CertPfx  "cert\" + AppSlug + ".pfx"
+#define CertFile "cert\" + AppSlug + ".cer"
+#define CertPfx  "cert\" + AppSlug + ".pfx"
 
 ; Nom de famille d'un paquet MSIX a desinstaller avant d'installer, pour migrer
 ; un poste depuis un ancien deploiement MSIX. Sans cela les deux versions
@@ -95,3 +95,4 @@
 ; A ne renseigner que si CETTE application a bien ete empaquetee en MSIX : y
 ; laisser l'identifiant d'une autre desinstallerait cette autre application.
 ;#define MsixPackageName "00000000-0000-0000-0000-000000000000"
+    
