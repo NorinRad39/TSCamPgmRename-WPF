@@ -144,6 +144,9 @@
   <ItemGroup>
     <Resource Include="renommer.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="TopSolid.Cad.Design.Automating" Version="7.20.400.121" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Web.WebView2.1.0.4191.47\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.4191.47\build\Microsoft.Web.WebView2.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
